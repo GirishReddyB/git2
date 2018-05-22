@@ -1,0 +1,19 @@
+FROM girish_mule_39:v2.3
+MAINTAINER Girish Reddy Biddala
+
+
+RUN ls -ltr 
+RUN ls -ltr mule
+RUN ls -ltr mule/bin
+RUN ls -ltr mule/apps
+#Add Mule runtime in Docker Container
+CMD echo "------ Add Mule apps in Docker Container --------"
+Add  Mule_API_2-1.7.zip mule/apps
+
+RUN ls -ltr mule/apps
+
+
+# Start Mule runtime
+CMD echo "------ Start Mule runtime --------"
+#CMD         ["sh","/Mule/mule-standalone-3.9.0/bin/mule"]
+ENTRYPOINT ["sh","/mule/bin/mule"]
