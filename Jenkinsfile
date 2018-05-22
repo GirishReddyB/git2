@@ -20,7 +20,7 @@ pipeline {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        def app = docker.build("girish_mule_39/${env.BUILD_ID}")
+         app = docker.build("girish_mule_39/${env.BUILD_ID}")
     }
     
     }
