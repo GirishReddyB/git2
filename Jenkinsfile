@@ -17,7 +17,7 @@ pipeline {
 	         * docker build on the command line */
 	         agent {
     docker {
-       
+       image 'Mule_API_2:latest'
     }
 }
 		steps {
