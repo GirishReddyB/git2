@@ -1,6 +1,6 @@
 pipeline {
   agent any
-
+ def app
   stages {
     stage('Build Maven') { 
       steps {
@@ -21,7 +21,8 @@ pipeline {
     }
 }
 		steps {
-	        sh 'docker build -t shanem/spring-petclinic:latest .'
+	       /* sh 'docker build -t shanem/spring-petclinic:latest .' */
+	       app = docker.build("getintodevops/hellonode")
 	      }
 	   }
     
