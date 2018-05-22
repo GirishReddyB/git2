@@ -10,7 +10,7 @@ pipeline {
       }
       
       
-      tage('Build image') {
+      stage('Build image') {
 	        /* This builds the actual image; synonymous to
 	         * docker build on the command line */
 	agent any
@@ -19,7 +19,7 @@ pipeline {
         sh 'docker build -t shanem/spring-petclinic:latest .'
       }
 	    }
-   
+   }
     
     }
 }
