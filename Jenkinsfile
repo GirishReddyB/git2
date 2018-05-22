@@ -19,8 +19,9 @@ pipeline {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+steps {
             def app = docker.build("girish_mule_39/${env.BUILD_ID}")
+    }
     }
     
     }
