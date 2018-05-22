@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mycompany</groupId>
-	<artifactId>git2</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+	<groupId>com.ThinkBIG</groupId>
+	<artifactId>Mule_API_2</artifactId>
+    <version>1.7</version>
     <packaging>mule</packaging>
-	<name>Mule git2 Application</name>
+	<name>Mule_API_Application</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<mule.home>/Users/biddalag/Documents/Mule</mule.home>
+    	
 
 		<mule.version>3.9.0</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
@@ -55,6 +56,85 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+		<!--	<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				  <version>2.2.1</version>
+				<configuration>
+					<deploymentType>standalone</deploymentType>
+					<muleVersion>${mule.version}</muleVersion> 
+					<muleHome>/Users/biddalag/Documents/WS_T2M/.mule</muleHome> 
+					<applicationName>${artifactId}</applicationName> 
+					<community>true</community> 
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>  -->
+			
+			
+			<plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>2.0</version>
+    <configuration>
+        <deploymentType>standalone</deploymentType>
+        <muleHome>/Users/biddalag/Documents/Mule/mule-standalone-3.9.0</muleHome>
+    </configuration>
+    <executions>
+        <execution>
+            <id>deploy</id>
+            <phase>deploy</phase>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+			
+			<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-deploy-plugin</artifactId>
+    <version>2.8.2</version>
+    <configuration>
+        <skip>true</skip>
+    </configuration>
+</plugin>
+	<!--		<plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>2.1.1</version>
+    <configuration>
+        <muleVersion>${mule.version}</muleVersion>
+        <deploymentType>cloudhub</deploymentType>
+        <applicationName>${artifactId}-${version}</applicationName>
+        <username>${cloudhub.username}</username>
+        <password>${cloudhub.password}</password>
+        <workerType>Micro</workerType>
+        <redeploy>true</redeploy>
+        <environment>Sandbox</environment>
+    </configuration>
+    <executions>
+        <execution>
+            <id>deploy</id>
+            <phase>deploy</phase>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>-->
+
+
+			
+			
 		</plugins>
 	</build>
 
@@ -125,7 +205,20 @@
 			<version>${mule.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+	<dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-spring-config</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-http</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
 
 	<repositories>
           <repository>
