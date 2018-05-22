@@ -10,21 +10,24 @@ pipeline {
         }
       }
       
-    
-      
-      stage('Build image') {
+    dockerNode(credentialsId: '', dockerHost: 'tcp://192.168.99.100:2376', image: '', remoteFs: '') {
+    // some block
+	
+	
+	  stage('Build image') {
 	        /* This builds the actual image; synonymous to
 	         * docker build on the command line */
-	         agent {
-    docker {
-       image 'Mule_API_2:latest'
-    }
-}
+
 		steps {
 	       /* sh 'docker build -t shanem/spring-petclinic:latest .' */
 	       app = docker.build("getintodevops/hellonode")
 	      }
 	   }
-    
+	
+	
+	
+	}
+      
+        
     }
 }
