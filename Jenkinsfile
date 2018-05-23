@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Maven') { 
       steps {
-      withMaven( maven : 'maven_3.5.3_1'){
+      withMaven( maven : 'maven_3_5_3'){
         sh 'mvn install'
         }
         }
