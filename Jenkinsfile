@@ -9,15 +9,30 @@ pipeline {
         }
         }
         
-        stage('Build Image') { 
-      steps {
-     	
-     	 sh 'docker build -t girish_mule_39:v3 -f Dockerfile3 .' 
-     	
-     	
+          stage("Build App") {
+            agent any 
+            steps { buildimage() }
         }
-        }
-        
    
+   
+   
+    }
+}
+
+// ================================================================================================
+// Build steps
+// ================================================================================================
+
+def buildimage() {
+    def buildResult
+   
+        echo "Connect to registry at ${env.REGISTRY_URL}"
+        dockerRegistryLogin()
+        echo "Build ${env.IMAGE_NAME}"
+        buildResult = docker.build(Mule_App/hellonode)
+        echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
+  
+        echo "echo image"
+        sh "docker image ls"
     }
 }
