@@ -27,7 +27,7 @@
 		       def buildResult
    
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
-		           dockerRegistryLogin()
+		           
 		           echo "Build ${env.IMAGE_NAME}"
 		           buildResult = docker.build(Mule_App/hellonode)
 		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
