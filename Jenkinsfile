@@ -12,9 +12,11 @@ pipeline {
         stage('Build Image') { 
       steps {
      	
-     	 sh 'docker build -t girish_mule_39:v3 -f Dockerfile3 .' 
      	
+	     	withDocker( docker : 'Docker_23'){
+	     	 sh 'docker build -t girish_mule_39:v3 -f Dockerfile3 .' 
      	
+     	}
         }
         }
         
