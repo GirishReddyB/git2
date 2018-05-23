@@ -7,7 +7,16 @@ pipeline {
         sh 'mvn install'
         }
         }
+        }
         
+        stage('Build Maven') { 
+      steps {
+     	
+     	 sh 'docker build -t girish_mule_39:v3 -f Dockerfile3 .' 
+     	
+     	
+        }
+        }
         
    
     }
