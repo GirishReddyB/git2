@@ -34,5 +34,5 @@
   
 		           echo "echo image"
 		           sh "docker image ls"
-		       }
+		       
 		   }
