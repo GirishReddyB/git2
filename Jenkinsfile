@@ -1,7 +1,5 @@
 pipeline {
-   agent {
-        docker { image 'node:7-alpine' }
-    }
+   agent any
   stages {
     stage('Build Maven') { 
       steps {
@@ -11,26 +9,5 @@ pipeline {
         }
       }
       
-    
-    // some block
-	
-	
-	  stage('Build image') {
-	        /* This builds the actual image; synonymous to
-	         * docker build on the command line */
-	         
-	      
-
-		steps {
-	       sh 'docker build -t shanem/spring-petclinic:latest .' 
-	      /*  app = docker.build("getintodevops/hellonode") */
-	      }
-	   }
-	
-	
-	
-	
-      
-        
     }
 }
