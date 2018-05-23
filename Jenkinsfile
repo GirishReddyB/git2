@@ -29,7 +29,7 @@
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
 		           
 		           echo "Build ${env.IMAGE_NAME}"
-		           buildResult = docker.build(Mule_App/hellonode)
+		           buildResult = docker.build("Mule_App:latest_1")
 		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
   
 		           echo "echo image"
