@@ -9,11 +9,6 @@ pipeline {
         }
         
         
-        stage('Build image') {
-			steps {
-		       sh 'docker build -t girish_mule_39:latest -f Dockerfile3 .' 		   
-		      }
-		   }
-    }
+   
     }
 }
