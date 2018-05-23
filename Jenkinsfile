@@ -9,7 +9,7 @@ pipeline {
         }
         }
         
-        stage('Build Maven') { 
+        stage('Build Image') { 
       steps {
      	
      	 sh 'docker build -t girish_mule_39:v3 -f Dockerfile3 .' 
