@@ -14,6 +14,6 @@ RUN ls -ltr mule/apps
 
 
 # Start Mule runtime
-CMD echo "------ Start Mule runtime --------"
+CMD echo "------ Start Mule runtime ---------"
 #CMD         ["sh","/Mule/mule-standalone-3.9.0/bin/mule"]
 ENTRYPOINT ["sh","/mule/bin/mule"]
