@@ -29,7 +29,7 @@
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
 		           
 		           echo "Build ${env.IMAGE_NAME}"
-		           buildResult = docker.build("mule_App:latest_1"," -f Dockerfile1 .")
+		           buildResult = docker.build("mule_App"," -f Dockerfile1 .")
 		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
   
 		           echo "echo image"
