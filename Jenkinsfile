@@ -113,8 +113,8 @@
 		}
 
 		def afterRunSleep(){
-				def time = params.SLEEP_TIME_IN_SECONDS
-		    echo "Waiting ${SLEEP_TIME_IN_SECONDS} seconds for deployment to complete prior starting smoke testing"
-		    sleep time.toInteger(10) 
+				def time = 10
+		    echo "Waiting 10 seconds for deployment to complete prior starting smoke testing"
+		    sleep time.toInteger() 
 
 		}
