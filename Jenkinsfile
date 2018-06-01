@@ -57,7 +57,8 @@
 				       
 				       sh "docker run --name mule_testapp -p 9082:9082 -i -d a_mule_app_test:latest"
 				       
-				       Sleep 10 SECONDS
+				      // Sleep 10 SECONDS
+				       afterRunSleep()
 			             }
 		           }
 			     
@@ -109,4 +110,11 @@
 		def showEnvironmentVariables() {
 			    sh 'env | sort > env.txt'
 			    sh 'cat env.txt'
+		}
+
+		def afterRunSleep(){
+				def time = params.SLEEP_TIME_IN_SECONDS
+		    echo "Waiting ${SLEEP_TIME_IN_SECONDS} seconds for deployment to complete prior starting smoke testing"
+		    sleep time.toInteger(10) 
+
 		}
