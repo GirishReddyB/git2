@@ -34,15 +34,16 @@
 			      //Clean docker container
 			   stage("Clean docker container") {
 		               steps {
-				       
-				   	try {
-					      sh "docker stop mule_testapp"
-				              sh "docker rm mule_testapp"
-					  } catch (Exception ex) {
-					      
-						echo "exception ::: ${ex}"
-						
-					  }
+				       script {
+						try {
+						      sh "docker stop mule_testapp"
+						      sh "docker rm mule_testapp"
+						  } catch (Exception ex) {
+
+							echo "exception ::: ${ex}"
+
+						  }
+				       		}
 			             }
 		           }
 			     
