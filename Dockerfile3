@@ -9,7 +9,7 @@ RUN ls -ltr mule/bin
 RUN ls -ltr mule/apps
 #Add Mule runtime in Docker Container
 CMD echo "------ Add Mule apps in Docker Container --------"
-copy  ./target/Mule_API_2-1.7.zip mule/apps
+copy  ./target/mule_API_2-1.7.zip mule/apps
 
 RUN ls -ltr mule/apps
 
