@@ -24,12 +24,13 @@
 		   // ================================================================================================
 
 		   def buildimage() {
+			    def dockerfile = 'Dockerfile.test'
 		       def buildResult
    
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
 		           
 		           echo "Build ${env.IMAGE_NAME}"
-		           buildResult = docker.build("a_mule_app_test","-f ./Dev_Ops_Test/Dockerfile3 .")
+		           buildResult = docker.build("a_mule_app_test","-f ${dockerfile} ../Dev_Ops_Test/")
 		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
   
 		           echo "echo image"
