@@ -36,7 +36,7 @@
 		               steps {
 				  //   echo "Run APP Image ${env.IMAGE_NAME}"
 				       
-				        docker.image('${env.IMAGE_NAME}').withRun('-p 9082:9082') {
+				        docker.image('a_mule_app_test').withRun('-p 9082:9082') {
          
        					 }
 			             }
