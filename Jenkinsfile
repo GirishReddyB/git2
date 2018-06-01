@@ -1,13 +1,16 @@
   pipeline {
+	  node {
 		      agent any
 	  
 		     stages {
-			     
+			 //Test App  
 			     stage("Test App") {
 		               steps {
 				     echo "App Testing success"
 			             }
 		           }
+			     
+			//Build Build App   
 		       stage('Build App') { 
 		         steps {
 		         withMaven( maven : 'maven_3_5_3'){
@@ -17,20 +20,26 @@
 		           }
 			     
 			     
-        
-		             stage("Build Docker Image ") {
+        		//Build Docker Image
+		            stage("Build Docker Image ") {
 		               agent any 
 		               steps { buildimage() }
 		           }
    
-   			   stage("Run Docker App") {
+   			 //Run Docker App
+			   stage("Run Docker App") {
 		               steps {
 				     echo "Run APP Image ${IMAGE_NAME}"
 			             }
 		           }
-   
+			     
+			     
+   			//stages
 		       }
-		   }
+		  //node
+	  	}
+	   //pipeline
+	}
   
 		   // ================================================================================================
 		   // Build steps
