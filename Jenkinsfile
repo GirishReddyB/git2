@@ -34,7 +34,11 @@
    			 //Run Docker App
 			   stage("Run Docker App") {
 		               steps {
-				     echo "Run APP Image ${env.IMAGE_NAME}"
+				  //   echo "Run APP Image ${env.IMAGE_NAME}"
+				       
+				        docker.image(${env.IMAGE_NAME}).withRun('-p 9082:9082') {
+         
+       					 }
 			             }
 		           }
 			     
