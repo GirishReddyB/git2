@@ -1,5 +1,6 @@
   pipeline {
 		      agent any
+	  def IMAGE_NAME = 'a_mule_app_test'
 		     stages {
 			     
 			     stage("Test App") {
@@ -38,7 +39,8 @@
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
 		           
 		           echo "Build ${env.IMAGE_NAME}"
-		           buildResult = docker.build("a_mule_app_test","-f ${dockerfile} ../Dev_Ops_Test/")
+		        //   buildResult = docker.build("a_mule_app_test","-f ${dockerfile} ../Dev_Ops_Test/")
+			   buildResult = docker.build("${IMAGE_NAME}","-f ${dockerfile} ../Dev_Ops_Test/")
 		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
   
 		           echo "echo image"
