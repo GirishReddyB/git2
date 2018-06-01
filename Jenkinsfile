@@ -3,8 +3,9 @@
 		     stages {
 			     
 			     stage("Test App") {
-		               
+		               steps {
 				     echo "App Testing success"
+			             }
 		           }
 		       stage('Build App') { 
 		         steps {
