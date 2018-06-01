@@ -1,15 +1,22 @@
   pipeline {
 		      agent any
 		     stages {
-		       stage('Build Maven') { 
+			     
+			     stage("Test App") {
+		               
+				     echo "App Testing success"
+		           }
+		       stage('Build App') { 
 		         steps {
 		         withMaven( maven : 'maven_3_5_3'){
 		           sh 'mvn install'
 		           }
 		           }
 		           }
+			     
+			     
         
-		             stage("Build App") {
+		             stage("Build Dcoker Image ") {
 		               agent any 
 		               steps { buildimage() }
 		           }
