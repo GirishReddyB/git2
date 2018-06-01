@@ -3,6 +3,11 @@
 		      agent any
 	  
 		     stages {
+			  
+			    stage("Start Pipeline") {
+		               steps { initialize() }
+		           }   
+			     
 			 //Test App  
 			     stage("Test App") {
 		               steps {
@@ -29,7 +34,7 @@
    			 //Run Docker App
 			   stage("Run Docker App") {
 		               steps {
-				     echo "Run APP Image ${IMAGE_NAME}"
+				     echo "Run APP Image ${env.IMAGE_NAME}"
 			             }
 		           }
 			     
@@ -53,10 +58,32 @@
 		           
 		           echo "Build ${env.IMAGE_NAME}"
 		        //   buildResult = docker.build("a_mule_app_test","-f ${dockerfile} ../Dev_Ops_Test/")
-			   buildResult = docker.build("${IMAGE_NAME}","-f ${dockerfile} ../Dev_Ops_Test/")
-		           echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
+			   buildResult = docker.build("${env.IMAGE_NAME}","-f ${dockerfile} ../Dev_Ops_Test/")
+		         //  echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
   
 		           echo "echo image"
-		           sh "docker image ls"
+		           //sh "docker image ls"
 		       
 		   }
+		   //Intialize
+
+		def initialize() {
+			
+			  echo "***** Start - Setting Env Variables ******"
+			    env.SYSTEM_NAME = "Girish_System"
+			    //env.AWS_REGION = "us-east-1"
+			    //env.REGISTRY_URL = "https://912661153448.dkr.ecr.us-east-1.amazonaws.com"
+			    //env.MAX_ENVIRONMENTNAME_LENGTH = 32
+			    //setEnvironment()
+			    env.IMAGE_NAME = "a_mule_app_test" 
+				//+ ((env.BRANCH_NAME == "master") ? "" : "${env.ENVIRONMENT}-") + 
+				//env.BUILD_ID
+			echo "**** Done - Setting Env Variables ******"
+			    showEnvironmentVariables()
+		}
+
+
+		def showEnvironmentVariables() {
+			    sh 'env | sort > env.txt'
+			    sh 'cat env.txt'
+		}
