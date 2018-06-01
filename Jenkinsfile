@@ -1,5 +1,5 @@
   pipeline {
-	  node {
+	
 		      agent any
 	  
 		     stages {
@@ -36,8 +36,7 @@
 			     
    			//stages
 		       }
-		  //node
-	  	}
+		
 	   //pipeline
 	}
   
