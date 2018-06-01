@@ -36,9 +36,7 @@
 		               steps {
 				  //   echo "Run APP Image ${env.IMAGE_NAME}"
 				       
-				        docker.image('a_mule_app_test').withRun("-p 9082:9082") {
-         					sh 'docker ps -l'
-       					 }
+				        docker.image('a_mule_app_test').Run("-p 9082:9082") 
 			             }
 		           }
 			     
