@@ -1,6 +1,7 @@
 FROM girish_mule_39:v2.3
 MAINTAINER Girish Reddy Biddala
 
+WORKDIR ./
 
 RUN ls -ltr 
 RUN ls -ltr mule
