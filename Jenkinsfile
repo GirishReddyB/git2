@@ -24,7 +24,7 @@
 		   // ================================================================================================
 
 		   def buildimage() {
-			    def dockerfile = 'Dockerfile.test'
+			    def dockerfile = 'Dockerfile3'
 		       def buildResult
    
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
