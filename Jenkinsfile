@@ -30,9 +30,25 @@
 		               agent any 
 		               steps { buildimage() }
 		           }
-   
+   			
+			      //Clean docker container
+			   stage("Clean docker container") {
+		               steps {
+				       
+				   	try {
+					      sh "docker stop mule_testapp"
+				              sh "docker rm mule_testapp"
+					  } catch (Exception ex) {
+					      
+						echo "exception ::: ${ex}"
+						
+					  }
+			             }
+		           }
+			     
+			     
    			 //Run Docker App
-			   stage("Run Docker App") {
+			   stage("Run Docker container") {
 		               steps {
 				  //   echo "Run APP Image ${env.IMAGE_NAME}"
 				       
