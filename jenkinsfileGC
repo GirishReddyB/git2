@@ -39,8 +39,8 @@
 						
 			echo " Command ::: docker tag ${env.IMAGE_NAME}  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
 					sh "docker tag ${env.IMAGE_NAME}  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
-			echo " Command ::: gcloud docker -- push  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
-					sh "gcloud docker -- push  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
+			echo " Command :::  docker  push  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
+					sh "docker  push  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
 						  } catch (Exception ex) {
 
 							echo "exception ::: ${ex}"
