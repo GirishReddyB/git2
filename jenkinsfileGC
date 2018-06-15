@@ -31,13 +31,13 @@
 		               steps { buildimage() }
 		           }
    			
-			/*      //Clean docker container
-			   stage("Clean docker container") {
+			   //Publish Image
+			   stage("Publish Image") {
 		               steps {
 				       script {
 						try {
-						      sh "docker stop mule_testapp"
-						      sh "docker rm mule_testapp"
+						      sh "docker tag ${env.IMAGE_NAME}  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
+						      sh "docker push  gcr.io/${env.GC_PROJ_NAME}/${env.GCIMAGE_NAME}"
 						  } catch (Exception ex) {
 
 							echo "exception ::: ${ex}"
@@ -45,7 +45,7 @@
 						  }
 				       		}
 			             }
-		           }*/
+		           }
 			     
 			     
    			/* //Run Docker App
