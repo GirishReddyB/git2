@@ -31,7 +31,7 @@
 		               steps { buildimage() }
 		           }
    			
-			      //Clean docker container
+			/*      //Clean docker container
 			   stage("Clean docker container") {
 		               steps {
 				       script {
@@ -45,10 +45,10 @@
 						  }
 				       		}
 			             }
-		           }
+		           }*/
 			     
 			     
-   			 //Run Docker App
+   			/* //Run Docker App
 			   stage("Run Docker container") {
 		               steps {
 				  //   echo "Run APP Image ${env.IMAGE_NAME}"
@@ -60,7 +60,7 @@
 				      // Sleep 10 SECONDS
 				       //afterRunSleep()
 			             }
-		           }
+		           } */
 			     
 			     
    			//stages
