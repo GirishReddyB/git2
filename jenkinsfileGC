@@ -102,6 +102,8 @@
 			    env.IMAGE_NAME = "a_mule_app_test" 
 				//+ ((env.BRANCH_NAME == "master") ? "" : "${env.ENVIRONMENT}-") + 
 				//env.BUILD_ID
+				
+				env.GC_PROJ_NAME = "girish-test-mapp"
 			echo "**** Done - Setting Env Variables ******"
 			    showEnvironmentVariables()
 		}
