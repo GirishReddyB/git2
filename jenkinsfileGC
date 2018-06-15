@@ -107,6 +107,7 @@
 				//env.BUILD_ID
 				
 				env.GC_PROJ_NAME = "girish-test-mapp"
+				env.GCIMAGE_NAME= "jek_mule_app"
 			echo "**** Done - Setting Env Variables ******"
 			    showEnvironmentVariables()
 		}
