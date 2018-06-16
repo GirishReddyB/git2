@@ -65,8 +65,8 @@
 			             }
 		           }
 			   
-			    //Create a VM Instance 
-			   stage("Create VM Run Apps") {
+			    //Configuring the Firewall for the VM instance 
+			   stage("Configuring the Firewall for the VM instance") {
 		               steps {
 				  //   echo "Run APP Image ${env.IMAGE_NAME}"
 				       
