@@ -95,6 +95,12 @@
 			
 			  echo "***** Start - Setting Env Variables ******"
 			    env.SYSTEM_NAME = "Girish_System"
+			
+			
+        		env.tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED,"yyyyMMdd"}-develop-${BUILDS_TODAY}');
+			env.TestTag= env.SYSTEM_NAME + env.tag 
+			 echo "Build ${env.TestTag}"
+        
 			    //env.AWS_REGION = "us-east-1"
 			    //env.REGISTRY_URL = "https://912661153448.dkr.ecr.us-east-1.amazonaws.com"
 			    //env.MAX_ENVIRONMENTNAME_LENGTH = 32
@@ -102,6 +108,9 @@
 			    env.IMAGE_NAME = "a_mule_app_test" 
 				//+ ((env.BRANCH_NAME == "master") ? "" : "${env.ENVIRONMENT}-") + 
 				//env.BUILD_ID
+			
+			
+			
 			echo "**** Done - Setting Env Variables ******"
 			    showEnvironmentVariables()
 		}
