@@ -100,8 +100,8 @@
         		//env.tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED,"yyyyMMdd"}-develop-${BUILDS_TODAY}');
 			//env.TestTag= env.SYSTEM_NAME + env.tag 
 			
-			env.tag = ${BUILD_DATE_FORMATTED, "yyyyMMdd"}-develop-${BUILDS_TODAY}
-			echo "${env.SYSTEM_NAME}:${env.tag}"
+			//env.tag = ${BUILD_DATE_FORMATTED, "yyyyMMdd"}-develop-${BUILDS_TODAY}
+			//echo "${env.SYSTEM_NAME}:${env.tag}"
         
 			    //env.AWS_REGION = "us-east-1"
 			    //env.REGISTRY_URL = "https://912661153448.dkr.ecr.us-east-1.amazonaws.com"
