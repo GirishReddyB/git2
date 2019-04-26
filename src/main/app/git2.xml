@@ -11,7 +11,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
  <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="9082" basePath="/test" doc:name="HTTP Listener Configuration"/>
     <flow name="test_ci_cdFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
-        <set-payload value="Test Demo Newyork Partner workshop" doc:name="Set Payload"/>
+        <set-payload value="Test Demo Newyork" doc:name="Set Payload"/>
     </flow>
 </mule>
 
