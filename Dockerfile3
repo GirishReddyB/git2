@@ -1,4 +1,4 @@
-FROM girish_mule_39:v2.3
+FROM girish_mule_39:latest
 MAINTAINER Girish Reddy Biddala
 
 WORKDIR /
