@@ -55,7 +55,7 @@
 				       
 				       // docker.image("a_mule_app_test:").run("-p 9082:9082") 
 				       
-				       sh "docker run --name mule_testapp -p 9082:9082 -i -d a_mule_app_test:latest"
+				       sh "docker run --name mule_testapp -p 9082:9082 -i -d a_mule_app_test:v4.2"
 				       
 				      // Sleep 10 SECONDS
 				       //afterRunSleep()
