@@ -75,7 +75,7 @@
 
 		   def buildimage() {
 			    def dockerfile = 'Dockerfile3'
-			   def IMAGE_NAME = 'a_mule_app_test'
+			   def IMAGE_NAME = 'a_mule_app_test:v4.2'
 		       def buildResult
    
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
