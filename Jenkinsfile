@@ -55,7 +55,7 @@
 				       
 				       // docker.image("a_mule_app_test:").run("-p 9082:9082") 
 				       
-				       sh "docker run --name mule_testapp -p 9082:9082 -i -d a_mule_app_test:v2.8"
+				       sh "docker run --name mule_testapp -p 9082:9082 -i -d a_mule_app_test:${env.BUILD_ID}"
 				       
 				      // Sleep 10 SECONDS
 				       //afterRunSleep()
@@ -76,7 +76,7 @@
 		   def buildimage() {
 			    def dockerfile = 'Dockerfile3'
 			   def IMAGE_NAME = 'a_mule_app_test'
-			   def BUILD_ID = 'v2.8'
+			  // def BUILD_ID = 'v2.8'
 		       def buildResult
    
 		           echo "Connect to registry at ${env.REGISTRY_URL}"
