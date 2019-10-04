@@ -74,7 +74,7 @@
 				       
 		// sh "gcloud compute firewall-rules create gcvm --allow=tcp:9082   --target-tags=mule-doc-server"
 				       
-				       // echo "***** Completed the Firewall rules ******"
+				       echo "***** Completed the Firewall rules ******"
 				       
 				      // Sleep 10 SECONDS
 				       //afterRunSleep()
